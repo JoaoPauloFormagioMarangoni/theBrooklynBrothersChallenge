@@ -55,7 +55,7 @@ export function Header() {
             <option value="antibacterial">Antibacterial</option>
           </select>
           <div>
-            <input type="text" ref={wordFilter} />
+            <input type="text" placeholder='Pesquisar' ref={wordFilter} />
             <button type="submit">
               <BiSearchAlt className="searchButton" />
             </button>

@@ -43,7 +43,7 @@ export const ContainerArticle = styled.article`
         margin-bottom: 5px;
       }
 
-      > span {
+      > span img {
         width: 100%;
         height: 300px;
         object-fit: cover;

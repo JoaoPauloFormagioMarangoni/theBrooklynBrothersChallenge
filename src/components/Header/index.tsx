@@ -35,7 +35,7 @@ export function Header() {
   }
 
   return (
-    <ContainerHeader>
+    <ContainerHeader id="header">
       <img src={Logo} alt="The Brooklyn Brothers" />
       <div>
         <button onClick={handleResetFilter}>Redefinir</button>

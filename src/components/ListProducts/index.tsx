@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useProducts } from '../../Contexts/ProductsContext'
-import { ContainerArticle, LoadingComponent } from './styles'
+import { ContainerArticle, LoadingComponent, ReturnBack } from './styles'
+import { FiArrowUp } from 'react-icons/fi'
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -40,9 +41,17 @@ export function ListProducts() {
       <div>Results - {products.length}</div>
 
       {isLoading ? (
-        <SkeletonTheme baseColor="#181818" highlightColor="#444">
-          <Skeleton count={15} className="skeletonStyle" />
-        </SkeletonTheme>
+        <ul>
+          {[...Array(15)].map((value, index) => (
+            <li key={index}>
+              <SkeletonTheme baseColor="#c6c6c6" highlightColor="#b2b2b2">
+                <Skeleton containerClassName="skeletonStyleImg" height={200} />
+                <Skeleton containerClassName="skeletonStyleTitle" height={30} />
+                <Skeleton containerClassName="skeletonStyleP" height={30} />
+              </SkeletonTheme>
+            </li>
+          ))}
+        </ul>
       ) : products.length === 0 ? (
         <div>Busca não encontrada</div>
       ) : (
@@ -64,6 +73,7 @@ export function ListProducts() {
               ))}
           </ul>
           {quantity < products.length && <LoadingComponent ref={observeRef} />}
+          {products.length > 3 && <ReturnBack href="#header"><FiArrowUp /></ReturnBack>}
         </>
       )}
     </ContainerArticle>

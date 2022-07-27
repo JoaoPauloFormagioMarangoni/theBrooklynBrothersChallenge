@@ -3,19 +3,6 @@ import styled from 'styled-components'
 export const ContainerArticle = styled.article`
   width: 60vw;
   margin: 50px auto;
-  
-  > span {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    
-    .skeletonStyle {
-      width: 300px;
-      height: 300px;
-      border-radius: 10px;
-    }
-  }
 
   ul {
     list-style: none;
@@ -56,6 +43,23 @@ export const ContainerArticle = styled.article`
 
       &:hover {
         transform: scale(1.1);
+      }
+
+      .skeletonStyleImg {
+        max-width: 250px;
+        width: 100%;
+        margin-bottom: 5px;
+      }
+
+      .skeletonStyleTitle {
+        max-width: 250px;
+        width: 100%;
+        margin-bottom: 5px;
+      }
+
+      .skeletonStyleP {
+        max-width: 250px;
+        width: 100%;
       }
     }
   }
@@ -114,5 +118,34 @@ export const LoadingComponent = styled.span`
     100% {
       transform: rotate(360deg);
     }
+  }
+`
+
+export const ReturnBack = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+
+  background: #181818;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  font-size: 20pt;
+  color: #fff;
+
+  box-shadow: 0 3px 0 #fff;
+  transition: all 0.1s;
+
+  &:hover {
+    background: #2d2d2d;
+  }
+
+  &:active {
+    box-shadow: 0 0 0 #fff;
+    transform: translateY(3px);
   }
 `

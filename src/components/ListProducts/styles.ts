@@ -148,4 +148,9 @@ export const ReturnBack = styled.a`
     box-shadow: 0 0 0 #fff;
     transform: translateY(3px);
   }
+
+  @media (max-width: 640px) {
+    bottom: 15px;
+    right: 15px;
+  }
 `

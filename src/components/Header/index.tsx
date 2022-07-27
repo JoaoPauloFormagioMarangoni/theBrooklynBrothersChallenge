@@ -28,32 +28,40 @@ export function Header() {
     }
   }
 
+  function handleResetFilter() {
+    filterName('')
+    categoryFilter.current ? (categoryFilter.current.value = '') : ''
+    wordFilter.current ? (wordFilter.current.value = '') : ''
+  }
+
   return (
     <ContainerHeader>
       <img src={Logo} alt="The Brooklyn Brothers" />
-
-      <form onSubmit={handleFilterName}>
-        <select
-          name="category"
-          id="category"
-          ref={categoryFilter}
-          onChange={handleFilterName}
-        >
-          <option value="">Category</option>
-          <option value="antitranspirante">Antitranspirante</option>
-          <option value="aerosol">Aerosol</option>
-          <option value="gel fresh">Gel Fresh</option>
-          <option value="líquido">Líquido</option>
-          <option value="mini">Mini</option>
-          <option value="antibacterial">Antibacterial</option>
-        </select>
-        <div>
-          <input type="text" ref={wordFilter} />
-          <button type="submit">
-            <BiSearchAlt className="searchButton" />
-          </button>
-        </div>
-      </form>
+      <div>
+        <button onClick={handleResetFilter}>Redefinir</button>
+        <form onSubmit={handleFilterName}>
+          <select
+            name="category"
+            id="category"
+            ref={categoryFilter}
+            onChange={handleFilterName}
+          >
+            <option value="">Category</option>
+            <option value="antitranspirante">Antitranspirante</option>
+            <option value="aerosol">Aerosol</option>
+            <option value="gel fresh">Gel Fresh</option>
+            <option value="líquido">Líquido</option>
+            <option value="mini">Mini</option>
+            <option value="antibacterial">Antibacterial</option>
+          </select>
+          <div>
+            <input type="text" ref={wordFilter} />
+            <button type="submit">
+              <BiSearchAlt className="searchButton" />
+            </button>
+          </div>
+        </form>
+      </div>
     </ContainerHeader>
   )
 }

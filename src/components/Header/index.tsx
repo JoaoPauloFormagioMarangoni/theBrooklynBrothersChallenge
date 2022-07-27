@@ -46,7 +46,7 @@ export function Header() {
             ref={categoryFilter}
             onChange={handleFilterName}
           >
-            <option value="">Category</option>
+            <option value="">Categoria</option>
             <option value="antitranspirante">Antitranspirante</option>
             <option value="aerosol">Aerosol</option>
             <option value="gel fresh">Gel Fresh</option>
